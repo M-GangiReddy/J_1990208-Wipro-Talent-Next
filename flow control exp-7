@@ -1,0 +1,43 @@
+class Age 
+{
+	public static void main(String[] args) 
+	{
+		int y=Integer.parseInt(args[1]);
+		String x=args[0];
+		if(x.equals("Male"))
+		{
+			if(y<=58)
+			{
+				System.out.println("The intrest is 8.4 %.");
+			}
+			else if(y<=100 && y>58)
+			{
+				System.out.println("The intrest is 10.5 %.");
+			}
+			else
+			{
+				System.out.println();
+			}
+		}
+		else if(x.equals("Female"))
+		{
+			if(y<=58)
+			{
+				System.out.println("The intrest is 8.2 %.");
+			}
+			else if(y<=100 && y>58)
+			{
+				System.out.println("The intrest is 9.2 %.");
+			}
+			else
+			{
+				System.out.println();
+			}
+		}
+		else
+		{
+			System.out.println("Invalid Gender");
+		}
+		
+	}
+}
