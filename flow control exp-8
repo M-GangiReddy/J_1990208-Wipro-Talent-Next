@@ -1,0 +1,23 @@
+import java.util.*;
+class Char 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		char x=sc.next().charAt(0);
+		if(x>='a' && x<='z')
+		{
+			x=Character.toUpperCase(x);
+			System.out.println(x);
+		}
+		else if(x>='A' && x<='Z')
+		{
+			x=Character.toLowerCase(x);
+			System.out.println(x);
+		}
+		else
+		{
+			System.out.println("Invalid letter");
+		}
+	}
+}
