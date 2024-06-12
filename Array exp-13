@@ -1,0 +1,30 @@
+import java.util.*;
+class Biggest3D 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		int l=sc.nextInt();
+		int a[][]=new int[l][l];
+		int i,j;
+		for(i=0;i<l;i++)
+		{
+			for(j=0;j<l;j++)
+			{
+				a[i][j]=sc.nextInt();
+			}
+		}
+		int big=a[0][0];
+		for(i=0;i<l;i++)
+		{
+			for(j=0;j<l;j++)
+			{
+				if(big<a[i][j])
+				{
+					big=a[i][j];
+				}
+			}
+		}
+		System.out.println("The biggest number is :"+big);
+	}
+}
