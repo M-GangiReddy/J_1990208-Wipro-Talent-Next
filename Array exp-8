@@ -1,0 +1,51 @@
+import java.util.*;
+import java.util.Arrays;
+class Numbers 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the elength of the the array: ");
+		int l = sc.nextInt();
+		int i,x=0;
+		int y=0;
+		int[] a = new int[l];
+		for(i=0;i<l;i++)
+		{
+			System.out.println("Enter the "+i+" Number.");
+			a[i]=sc.nextInt();
+			if(a[i]==6)
+			{
+				x=i;
+			}
+			if(a[i]==7)
+			{
+				y=i;
+			}
+		}
+		int sum=0;
+		System.out.println(x+","+y);
+		if(x<y)
+		{
+			for(i=0;i<l;i++)
+			{
+				if(i<x || i>y)
+				{
+					sum+=a[i];
+				}
+			}
+		}
+		else
+		{
+			for(i=0;i<l;i++)
+			{
+				if(i>=x || i<=y)
+				{
+					sum+=a[i];
+				}
+			}
+		}
+		System.out.println("The sum is "+sum);	
+
+	}
+}
