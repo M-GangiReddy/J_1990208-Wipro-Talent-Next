@@ -1,0 +1,96 @@
+import java.util.*;
+class Author
+{
+	 private String name;
+	 private String email;
+     private char gender;
+	Author(String name, String email, char gender)
+	{
+		this.name=name;
+		this.email=email;
+		this.gender=gender;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public String getEmail()
+	{
+		return email;
+	}
+    public char getGender()
+	{
+		return gender;
+	}
+    
+	@Override
+	public String toString()
+	{
+		
+		return "[ Name: "+name+" Email: "+email+" Gender: "+gender+" ]";
+		
+	}
+        
+}
+class Books 
+{
+	private String bookname;
+	private double price;
+	private int qtyInStock;
+	private Author author;
+	Books(String bookname, Author author, double price, int qtyInStock)
+	{
+		
+		this.bookname=bookname;
+		this.author=author;
+		this.price=price;
+		this.qtyInStock=qtyInStock;
+	}
+	/*void book()
+	{
+		System.out.println(bookname);
+		System.out.println(price);
+        System.out.println(qtyInStock);
+	}*/
+	public String getBookName()
+	{
+		return bookname;
+	}
+	public Author getAuthor()
+	{
+		return author;
+	}
+	public double getPrice()
+	{
+		return price;
+	}
+    public int getQtyInStock()
+	{
+		return qtyInStock;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Book: "+bookname+"|"+" Author: "+author+"|"+" Price: "+price+"|"+" qty: "+qtyInStock ;
+		
+	}
+	
+}
+class  LaunchAuthor
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		String name=sc.nextLine();
+		String email=sc.nextLine();
+		String bookname=sc.nextLine();
+		double price=sc.nextDouble();
+		int qtyInStock=sc.nextInt();
+		char gender=sc.next().charAt(0);
+		Author a=new Author(name,email,gender);
+		Books b=new Books(bookname, a, price, qtyInStock);
+		System.out.println(b);
+		
+	}
+}
