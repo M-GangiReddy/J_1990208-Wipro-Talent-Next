@@ -1,96 +1,28 @@
 import java.util.*;
-class Author
+import java.util.*;
+class Pow
 {
-	 private String name;
-	 private String email;
-     private char gender;
-	Author(String name, String email, char gender)
+	static int powerInt(int num1, int num2)
 	{
-		this.name=name;
-		this.email=email;
-		this.gender=gender;
+		int p=(int)Math.pow(num1, num2);
+		return p;
 	}
-	public String getName()
+	static double powerDouble(double num1, int num2)
 	{
-		return name;
-	}
-	public String getEmail()
-	{
-		return email;
-	}
-    public char getGender()
-	{
-		return gender;
+		double p=Math.pow(num1, num2);
+		return p;
 	}
     
-	@Override
-	public String toString()
-	{
-		
-		return "[ Name: "+name+" Email: "+email+" Gender: "+gender+" ]";
-		
-	}
-        
 }
-class Books 
-{
-	private String bookname;
-	private double price;
-	private int qtyInStock;
-	private Author author;
-	Books(String bookname, Author author, double price, int qtyInStock)
-	{
-		
-		this.bookname=bookname;
-		this.author=author;
-		this.price=price;
-		this.qtyInStock=qtyInStock;
-	}
-	/*void book()
-	{
-		System.out.println(bookname);
-		System.out.println(price);
-        System.out.println(qtyInStock);
-	}*/
-	public String getBookName()
-	{
-		return bookname;
-	}
-	public Author getAuthor()
-	{
-		return author;
-	}
-	public double getPrice()
-	{
-		return price;
-	}
-    public int getQtyInStock()
-	{
-		return qtyInStock;
-	}
-	
-	@Override
-	public String toString()
-	{
-		return "Book: "+bookname+"|"+" Author: "+author+"|"+" Price: "+price+"|"+" qty: "+qtyInStock ;
-		
-	}
-	
-}
-class  LaunchAuthor
+class PowNum
 {
 	public static void main(String[] args) 
 	{
 		Scanner sc=new Scanner(System.in);
-		String name=sc.nextLine();
-		String email=sc.nextLine();
-		String bookname=sc.nextLine();
-		double price=sc.nextDouble();
-		int qtyInStock=sc.nextInt();
-		char gender=sc.next().charAt(0);
-		Author a=new Author(name,email,gender);
-		Books b=new Books(bookname, a, price, qtyInStock);
-		System.out.println(b);
-		
+		int x=sc.nextInt();
+		int y=sc.nextInt();
+		System.out.println(Pow.powerInt(x, y));
+		System.out.println(Pow.powerDouble(x, y));
+        
 	}
 }
