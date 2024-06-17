@@ -1,0 +1,38 @@
+abstract class Animal
+{
+	abstract void eat();
+	abstract void fly();
+}
+class Bird extends Animal
+{
+	void eat()
+	{
+		System.out.println("Eats insects");
+	}
+	void sleep()
+	{
+		System.out.println("sleeps on tree");
+	}
+	void fly()
+	{
+		System.out.println("flies at average height");
+	}
+}
+class Creature
+{
+	void permit(Bird ref)
+	{
+		ref.eat();
+		ref.sleep();
+		ref.fly();
+	}
+}
+class  LaunchAnimal
+{
+	public static void main(String[] args) 
+	{
+		Bird b=new Bird();
+		Creature c=new Creature();
+		c.permit(b);
+	}
+}
