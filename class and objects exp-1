@@ -1,0 +1,32 @@
+import java.util.*;
+class Box
+{
+	private int x;
+	private int y;
+	private int z;
+	private int volume;
+	Box(int x, int y, int z)
+	{
+		super();
+		this.x=x;
+		this.y=y;
+		this.z=z;
+		volume=x*y*z;
+	}
+	void disp()
+	{
+		System.out.println(volume);
+	}
+}
+class LaunchBox 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		int x=sc.nextInt();
+		int y=sc.nextInt();
+		int z=sc.nextInt();
+		Box b=new Box(x, y, z);
+		b.disp();
+	}
+}
