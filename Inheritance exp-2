@@ -1,0 +1,59 @@
+import java.util.*;
+class Person
+{
+	private String name;
+	Person(String n)
+	{
+		this.name=n;
+	}
+	public String getName()
+	{
+		return name;
+	}
+}
+class Employee extends Person
+{
+	
+	private double annualSalary;
+	private int yearEmployeeStarted;
+	private String nationalInsurance;
+	Employee(String n, double annualSalary, int yearEmployeeStarted, String nationalInsurance)
+	{
+		super(n);
+		this.annualSalary=annualSalary;
+		this.yearEmployeeStarted=yearEmployeeStarted;
+		this.nationalInsurance=nationalInsurance;
+	}
+	public double getAnnualSalary()
+	{
+		return annualSalary;
+	}
+	public int getYearEmployeeStarted()
+	{
+		return yearEmployeeStarted;
+	}
+	public String getNationalInsurance()
+	{
+		return nationalInsurance;
+	}
+
+	void disp1()
+	{
+		System.out.println("Name :"+getName()+"Annual Salary: "+getAnnualSalary()+" year of Employee Started: "+getYearEmployeeStarted()+"National Insurance Number: "+getNationalInsurance());
+	}    
+}
+class TestEmployee
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		String n=sc.nextLine();
+		String nationalInsurance=sc.nextLine();
+		double annualSalary=sc.nextDouble();
+		int yearEmployeeStarted=sc.nextInt();
+		Person p=new Person(n);
+		Employee e=new Employee(n, annualSalary, yearEmployeeStarted, nationalInsurance);
+		e.disp1();
+
+	}
+}
