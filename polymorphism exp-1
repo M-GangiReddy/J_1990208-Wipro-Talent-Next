@@ -1,0 +1,44 @@
+class Fruit
+{
+	void eat()
+	{
+		System.out.println("Apple-Sweet, Orange-Soure");
+	}
+	void shape()
+	{
+		System.out.println("Round in shape");
+	}
+}
+class Apple extends Fruit
+{
+	void eat()
+	{
+		System.out.println("Name of the Fruit is Apple and Taste is Sweet");
+	}
+}
+class Orange extends Fruit
+{
+	void eat()
+	{
+		System.out.println("Name of the Fruit is Orange and Taste is Sour");
+	}
+}
+class Vegy
+{
+	void permit(Fruit ref)
+	{
+		ref.eat();
+		ref.shape();
+	}
+}
+class LaunchFruit 
+{
+	public static void main(String[] args) 
+	{
+		Apple a=new Apple();
+		Orange o=new Orange();
+		Vegy v=new Vegy();
+		v.permit(a);
+		v.permit(o);
+	}
+}
