@@ -1,0 +1,42 @@
+public class Launch
+{
+  public static void main(String[] arg)
+  {
+    Scanner sc=new Scanner(System.in)
+    System.out.println("Enter the value of N :");
+    int input1=sc.nextInt();
+    System.out.println("Enter the value of Option :");
+    int input2=sc.nextInt();
+    int i,sum=input1;
+    if(input2==1)
+    {
+        for(i=1;i<input1;i++)
+        {
+            if(i%2!=0)
+            {
+                sum-=(input1-i);
+            }
+            else
+            {
+                sum+=(input1-i);
+            }
+        }
+        return sum;
+    }
+    else
+    {
+        for(i=1;i<input1;i++)
+        {
+            if(i%2!=0)
+            {
+                sum+=(input1-i);
+            }
+            else
+            {
+                sum-=(input1-i);
+            }
+        }
+        return sum;
+    }
+  }
+}
