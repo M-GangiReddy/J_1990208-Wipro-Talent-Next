@@ -1,0 +1,51 @@
+Question:
+In the problem given a number as input. In this orogram i need to compress the number until the number is two digit. The process of compression is i need to claculate the difference of the all consicutive number 
+and form a new number and go on in the same process. Sample Input - 6928. Step-1 : 376 --- 3=(6-9),7=(9-2),6=(2-8). Step-2 : 41 -- 4=(3-7),1=(7-6). Output is 41.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+code:
+
+import java.util.*;
+class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Number:");
+        int n=sc.nextInt();
+        int l=(int)Math.log10(n)+1;
+        while(l>2)
+        {
+            n=comp(n);
+            l--;
+        }
+        System.out.println(n);
+    }
+    public static int comp(int input)
+    {
+        int temp=input;
+        int len=(int)Math.log10(temp)+1;
+        int[] a=new int[len];
+        int i=len-1;
+        while(temp>0 )
+        {
+            if(i>=0)
+            {
+            int rem=temp%10;
+            a[i]=rem;
+            temp/=10;
+            i--;
+            }
+            
+        }
+        int sum=0;
+        for(i=1;i<a.length;i++)
+        {
+           /* if(i==a.length-1)
+            {
+                break;
+            }*/
+            sum=sum*10+Math.abs(a[i]-a[i-1]);
+        }
+        return sum;
+    }
+}
